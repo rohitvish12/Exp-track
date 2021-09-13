@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect } from 'react';
 // import ExpenseItem from './components/Expense/ExpenseItem';
 import Expense from './components/Expense/Expense';
 import NewExpense from './components/NewExpense/NewExpense';
@@ -6,8 +6,9 @@ import NewExpense from './components/NewExpense/NewExpense';
 // import { initializeApp } from "firebase/app";
 // import {Config} from './Config';
 // import { getDatabase, ref, set } from "firebase/database";
-
-
+import {useSelector, useDispatch} from 'react-redux';
+import { getTransactions as listTransactions } from './redux/actions/transactionAction'
+import { getTransactions } from './service/api'
 
 const Dummy_Expense = [
   {
@@ -18,9 +19,9 @@ const Dummy_Expense = [
   },
   {
     id: 'e2',
-    title: 'New TV', 
-    amount: 799.49, 
-    date: new Date(2021, 2, 12) 
+    title: 'New TV',
+    amount: 799.49,
+    date: new Date(2021, 2, 12)
   },
   {
     id: 'e3',
@@ -37,19 +38,29 @@ const Dummy_Expense = [
 ];
 
 function App() {
-  const [expenses, setExpenses]= useState(Dummy_Expense)
-  const onAddExpenseHandler = (expense) => {
-    setExpenses((prevExpense) => {
-      return [expense, ...prevExpense];
-    });
-  };
   
+  const { transactions } = useSelector(state => state.getTransactions);
+  console.log(transactions);
+  const getExpenses = transactions;
+  console.log(getExpenses);
+  // const [expenses, setExpenses] = useState(Dummy_Expense)
+  const dispatch = useDispatch();
   
-  
+  // const onAddExpenseHandler = (expense) => {
+  //   setExpenses((getExpenses) => {
+  //     return [expense, ...getExpenses];
+  //   });
+  // };
+  useEffect(() => {
+    dispatch(listTransactions());
+  }, [dispatch]);
+
+  // console.log(getTransactions);
+
   return (
     <div className="App">
-      <NewExpense onAddExpense={onAddExpenseHandler} />
-      <Expense expenses={expenses} />
+      <NewExpense/>
+      <Expense transactions={transactions} />
     </div>
   );
 }

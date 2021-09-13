@@ -12,10 +12,10 @@ export const AddTransaction = async (expenseData)=>{
 
 };
 
-export const getTransactions = async (req, res) => {
+export const getTransactions = async () => {
     try {
-        return await axios.get(`${url}`);
+        return await axios.get(`${url}/transaction`);
     } catch (error) {
         console.log('error while calling get transaction api')
     }
-}
+};

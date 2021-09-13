@@ -1,12 +1,12 @@
 import express from 'express';
 
 // import Transaction from '../modal/Transaction.js'
-import {addTransactions, getTransaction} from '../controllers/Transaction.js';
+import {addTransactions, getTransactions} from '../controllers/Transaction.js';
 const router=express.Router();
 
 
 router.post('/', addTransactions);
-router.get('/', getTransaction);
+router.get('/transaction', getTransactions);
 
 export default router;
 

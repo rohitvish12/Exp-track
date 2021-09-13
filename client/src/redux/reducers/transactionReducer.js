@@ -5,7 +5,7 @@ export const getTransactionReducer = (state={transactions: [] }, action) => {
     switch (action.type) {
         case actionType.GET_TRANSACTION_SUCCESS:
             return{
-                products:action.payload
+                transactions:action.payload
             }
         case actionType.GET_TRANSACTION_FAIL:
             return{

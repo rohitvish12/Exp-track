@@ -6,7 +6,7 @@ export const addTransactions = async (req, res) => {
       const { title, amount,date } = req.body;
   
       const transaction = await Transaction.create(req.body);
-      console.log(transaction);
+      // console.log(transaction);
       return res.status(201).json({
         success: true,
         data: transaction
@@ -30,12 +30,12 @@ export const addTransactions = async (req, res) => {
   };
   
 
-  export const getTransaction = async(req, res) => {
+  export const getTransactions = async(req, res) => {
     try {
       const transaction = await Transaction.find({});
-      res.json(transaction);
       console.log(transaction);
+      return res.status(201).json(transaction);
     } catch (error) {
       console.log('error: ', error.message);
     }
-  } 
+  }

@@ -11,8 +11,8 @@ const NewExpense = (props) => {
             ...enteredExpenseData,
             id: Math.random().toString()
         };
-        console.log(expenseData);
-        props.onAddExpense(expenseData);
+        // console.log(expenseData);
+        // props.onAddExpense(expenseData);
         const NewExpense = await AddTransaction(expenseData);
         console.log(NewExpense);
         setIsEdit(false);

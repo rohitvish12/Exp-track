@@ -4,7 +4,7 @@ import {composeWithDevTools } from 'redux-devtools-extension';
 import {getTransactionReducer} from './reducers/transactionReducer'
 
 const reducer = combineReducers({
-    getTransaction: getTransactionReducer,
+    getTransactions: getTransactionReducer,
 });
 
 const middleware = [thunk];
