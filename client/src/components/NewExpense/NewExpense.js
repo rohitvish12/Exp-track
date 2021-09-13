@@ -13,8 +13,6 @@ const NewExpense = (props) => {
         };
         console.log(expenseData);
         props.onAddExpense(expenseData);
-
-        
         const NewExpense = await AddTransaction(expenseData);
         console.log(NewExpense);
         setIsEdit(false);

@@ -29,3 +29,13 @@ export const addTransactions = async (req, res) => {
     }
   };
   
+
+  export const getTransaction = async(req, res) => {
+    try {
+      const transaction = await Transaction.find({});
+      res.json(transaction);
+      console.log(transaction);
+    } catch (error) {
+      console.log('error: ', error.message);
+    }
+  } 
