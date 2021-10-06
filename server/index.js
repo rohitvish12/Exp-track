@@ -1,9 +1,4 @@
-// const express = require('express');
-// const app = express();
-// const mongoose = require('mongoose');
-// const cors = require('cors');
-// const bodyParser = require('body-parser');
-// const Routes = require('./routes/Routes')
+
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
@@ -12,7 +7,7 @@ import Routes from './routes/Routes.js';
 import db from './db/db.js';
 const app = express();
 
-// require('./db/db')
+
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
