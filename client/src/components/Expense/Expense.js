@@ -12,7 +12,6 @@ const Expense = ({ transactions }) => {
 
     const onExpenseYearHandler = (chosenYear) => {
         setExpensesYear(chosenYear);
-        // console.log(setExpensesYear);
     };
     
     // const filterByYear = transactions.filter(item=>item.date.getFullYear() === expensesYear )
@@ -20,14 +19,7 @@ const Expense = ({ transactions }) => {
         <div className="expenses">
             {/* <ExpenseFilter selected={expensesYear} onchangeFilter={onExpenseYearHandler} /> */}
             <Card className="expenses">
-                {/* {filterByYear.length===0?<p className="expenses-list__fallback" >No expenses Found.</p>:filterByYear.map((e,i) => (                    
-                    <ExpenseItem
-                        key={i}
-                        title={e.title}
-                        amount={e.amount}
-                        date={e.date}
-                    />
-                ))} */}
+                
 
                 {transactions.map((transaction,i) => (
                     <ExpenseItem
