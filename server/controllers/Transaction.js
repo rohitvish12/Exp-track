@@ -1,4 +1,4 @@
-// const Transaction = require("../modal/Transaction.js");
+
 import Transaction from "../modal/Transaction.js";
 
 export const addTransactions = async (req, res) => {
@@ -6,7 +6,6 @@ export const addTransactions = async (req, res) => {
       const { title, amount,date } = req.body;
   
       const transaction = await Transaction.create(req.body);
-      // console.log(transaction);
       return res.status(201).json({
         success: true,
         data: transaction
@@ -25,7 +24,6 @@ export const addTransactions = async (req, res) => {
           error: "Server error"
         });
       }
-      // console.log(error.message);
     }
   };
   
