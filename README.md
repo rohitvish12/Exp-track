@@ -1,5 +1,5 @@
 # Expense Tracker Site
-Histroden is a dummy HTML,CSS template made just for fun.
+Expense Tracker is a React site to keep expenses tracked.
 
 ## Installation
 It has two parts:
